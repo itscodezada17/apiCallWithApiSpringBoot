@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="item"
+            type="com.ujjwal.spacex.home.models.SpaceX" />
+
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:id="@+id/img"
+        android:scaleType="fitXY"
+        imageUrl = "@{item.links.missionPatch}"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <TextView
+        android:id="@+id/missionName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mission Name : "
+        android:textColor="@color/black"
+        android:textSize="12dp"
+        android:padding="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/img" />
+    <TextView
+        android:id="@+id/missionNameI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="@{item.missionName}"
+        android:textColor="#E63C55"
+        android:textSize="12dp"
+        android:padding="2dp"
+        app:layout_constraintStart_toEndOf="@id/missionName"
+        app:layout_constraintTop_toBottomOf="@id/img" />
+
+    <TextView
+        android:id="@+id/launchYear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Launch Year : "
+        android:padding="2dp"
+        android:textColor="@color/black"
+        android:textSize="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/missionNameI" />
+    <TextView
+        android:id="@+id/launchYearI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="@{item.launchYear}"
+        android:textColor="#E63C55"
+        android:textSize="12dp"
+        android:padding="2dp"
+        app:layout_constraintStart_toEndOf="@id/launchYear"
+        app:layout_constraintTop_toBottomOf="@id/missionNameI" />
+
+
+    <TextView
+        android:id="@+id/launch_site"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Launch Site : "
+        android:padding="2dp"
+        android:textColor="@color/black"
+        android:textSize="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/launchYearI" />
+    <TextView
+        android:id="@+id/launchsiteI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="@{item.launchSite.siteName}"
+        android:textColor="#E63C55"
+        android:textSize="12dp"
+        android:padding="2dp"
+        app:layout_constraintStart_toEndOf="@id/launchYear"
+        app:layout_constraintTop_toBottomOf="@id/launchYearI" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

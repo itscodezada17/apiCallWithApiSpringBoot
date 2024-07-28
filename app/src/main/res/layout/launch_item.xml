@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="item"
+            type="com.ujjwal.spacex.home.models.SpaceX" />
+        <variable
+            name="callBacks"
+            type="com.ujjwal.spacex.home.callBacks.HomeClickCallback" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp"
+    android:layout_margin="5dp"
+    android:background="#C9AFED"
+    android:onClick="@{() -> callBacks.navigateToProductDetailFragment(item)}">
+
+        <TextView
+            android:id="@+id/missionName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mission Name : "
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            android:padding="2dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/missionNameI"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="@{item.missionName}"
+            android:textColor="#E63C55"
+            android:textSize="12dp"
+            android:padding="2dp"
+            app:layout_constraintStart_toEndOf="@id/missionName"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/rocketName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rocket Name : "
+            android:padding="2dp"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/missionName" />
+        <TextView
+            android:id="@+id/rocketNameI"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="@{item.rocket.rocketName}"
+            android:textColor="#E63C55"
+            android:textSize="12dp"
+            android:padding="2dp"
+            app:layout_constraintStart_toEndOf="@id/rocketName"
+            app:layout_constraintTop_toBottomOf="@id/missionName" />
+        <TextView
+            android:id="@+id/launchYear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Launch Year : "
+            android:padding="2dp"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rocketName" />
+        <TextView
+            android:id="@+id/launchYearI"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="@{item.launchYear}"
+            android:textColor="#E63C55"
+            android:textSize="12dp"
+            android:padding="2dp"
+            app:layout_constraintStart_toEndOf="@id/launchYear"
+            app:layout_constraintTop_toBottomOf="@id/rocketName" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

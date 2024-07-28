@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="item"
+            type="com.ujjwal.spacex.home.models.SpaceX" />
+
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/mediadetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Media Links "
+            android:textColor="#245DED"
+            android:textSize="16dp"
+            android:padding="2dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/wiki"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wikipedia Link : "
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            android:padding="2dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mediadetails" />
+        <TextView
+            android:id="@+id/wikiI"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="@{item.links.wikipedia}"
+            android:autoLink="web"
+            android:textColor="#E63C55"
+            android:textSize="12dp"
+            android:padding="2dp"
+            app:layout_constraintStart_toEndOf="@id/wiki"
+            app:layout_constraintTop_toBottomOf="@id/mediadetails" />
+        <TextView
+            android:id="@+id/article"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Article Link : "
+            android:padding="2dp"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/wikiI" />
+        <TextView
+            android:id="@+id/articleI"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="@{item.links.articleLink}"
+            android:autoLink="web"
+            android:textColor="#E63C55"
+            android:textSize="12dp"
+            android:padding="2dp"
+            app:layout_constraintStart_toEndOf="@id/article"
+            app:layout_constraintTop_toBottomOf="@id/wikiI" />
+        <TextView
+            android:id="@+id/youtube"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="YouTube : "
+            android:padding="2dp"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/articleI" />
+        <TextView
+            android:id="@+id/youtubeI"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="@{item.links.videoLink}"
+            android:autoLink="web"
+            android:textColor="#E63C55"
+            android:textSize="12dp"
+            android:padding="2dp"
+            app:layout_constraintStart_toEndOf="@id/youtube"
+            app:layout_constraintTop_toBottomOf="@id/articleI" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

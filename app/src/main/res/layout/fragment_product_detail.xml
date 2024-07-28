@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="item"
+            type="com.ujjwal.spacex.home.models.SpaceX" />
+
+    </data>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/cardview_light_background">
+
+            <include
+                android:id="@+id/basic_details"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                layout="@layout/product_basic_details"
+                app:layout_constraintStart_toStartOf="@id/guideLineStart"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <include
+                android:id="@+id/rocket__details"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                layout="@layout/rocket_details"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="@id/guideLineStart"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                app:layout_constraintTop_toBottomOf="@id/basic_details"/>
+
+            <include
+                android:id="@+id/media_links"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                layout="@layout/media_links"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="@id/guideLineStart"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                app:layout_constraintTop_toBottomOf="@id/rocket__details"/>
+
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guidelineEnd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="12dp" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideLineStart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="12dp" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideLineBottom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_end="26dp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

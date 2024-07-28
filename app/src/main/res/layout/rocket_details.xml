@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="item"
+            type="com.ujjwal.spacex.home.models.SpaceX" />
+
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/rocketdetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rocket Details "
+            android:textColor="#245DED"
+            android:textSize="16dp"
+            android:padding="2dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/rocketName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rocket Name : "
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            android:padding="2dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rocketdetails" />
+        <TextView
+            android:id="@+id/rocketNameI"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="@{item.rocket.rocketName}"
+            android:textColor="#E63C55"
+            android:textSize="12dp"
+            android:padding="2dp"
+            app:layout_constraintStart_toEndOf="@id/rocketName"
+            app:layout_constraintTop_toBottomOf="@id/rocketdetails" />
+        <TextView
+            android:id="@+id/rockettype"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rocket Type : "
+            android:padding="2dp"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rocketNameI" />
+        <TextView
+            android:id="@+id/rockettypeI"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="@{item.rocket.rocketName}"
+            android:textColor="#E63C55"
+            android:textSize="12dp"
+            android:padding="2dp"
+            app:layout_constraintStart_toEndOf="@id/rocketName"
+            app:layout_constraintTop_toBottomOf="@id/rocketNameI" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
